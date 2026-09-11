@@ -1,0 +1,3624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #ffc2dc,
+        #f8c8dc,
+        #ffe5f0
+    );
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.background-animation {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.heart,
+.balloon,
+.sparkle {
+    position: absolute;
+
+    animation: floatUp linear infinite;
+
+    opacity: 0.8;
+}
+
+
+.heart {
+    font-size: 40px;
+}
+
+
+.balloon {
+    font-size: 50px;
+}
+
+
+.sparkle {
+    font-size: 30px;
+}
+
+
+/* Different Positions */
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-duration: 9s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 70%;
+    animation-duration: 10s;
+}
+
+.heart:nth-child(4) {
+    left: 90%;
+    animation-duration: 13s;
+}
+
+
+.balloon:nth-child(5) {
+    left: 20%;
+    animation-duration: 14s;
+}
+
+.balloon:nth-child(6) {
+    left: 60%;
+    animation-duration: 16s;
+}
+
+.balloon:nth-child(7) {
+    left: 80%;
+    animation-duration: 12s;
+}
+
+
+.sparkle:nth-child(8) {
+    left: 15%;
+    animation-duration: 8s;
+}
+
+.sparkle:nth-child(9) {
+    left: 45%;
+    animation-duration: 10s;
+}
+
+.sparkle:nth-child(10) {
+    left: 75%;
+    animation-duration: 9s;
+}
+
+.sparkle:nth-child(11) {
+    left: 95%;
+    animation-duration: 11s;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.welcome-card {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    text-align: center;
+
+    padding: 60px 40px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 25px 50px rgba(255, 105, 180, 0.25);
+
+    animation: cardEntry 1.5s ease;
+}
+
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* TEXT */
+
+.top-text {
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+    color: #b04a70;
+
+}
+
+
+h1 {
+
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    line-height: 1.3;
+
+    color: #b63d6d;
+
+}
+
+
+h1 span {
+
+    display: block;
+
+    color: #e8437a;
+
+    margin-top: 10px;
+
+}
+
+
+h2 {
+
+    margin: 20px 0;
+
+    font-size: 28px;
+
+    color: #9d3159;
+
+}
+
+
+.welcome-card p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #74354d;
+
+}
+
+
+/* BUTTON */
+
+#startBtn {
+
+    margin-top: 35px;
+
+    padding: 17px 40px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f91,
+        #ff7eb3
+    );
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(255, 79, 145, 0.4);
+
+    transition: 0.4s;
+
+}
+
+
+#startBtn:hover {
+
+    transform: translateY(-5px) scale(1.05);
+
+    box-shadow:
+        0 15px 30px rgba(255, 79, 145, 0.6);
+
+}
+
+
+.small-text {
+
+    margin-top: 25px;
+
+    font-size: 13px !important;
+
+    opacity: 0.8;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .welcome-card {
+
+        padding: 45px 20px;
+
+    }
+
+    .welcome-card p {
+
+        font-size: 15px;
+
+    }
+
+    h2 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+/* =========================
+   BIRTHDAY QUEST
+========================= */
+
+.quest-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.quest-card {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    padding: 60px 40px;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.40);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.25);
+
+}
+
+
+.quest-icon {
+
+    font-size: 70px;
+
+    animation: bounce 2s infinite;
+
+}
+
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+.quest-small {
+
+    color: #b04a70;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-top: 15px;
+
+}
+
+
+.quest-card h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    margin: 20px 0;
+
+}
+
+
+.quest-question {
+
+    color: #74354d;
+
+    font-size: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    max-width: 400px;
+
+    margin: auto;
+
+}
+
+
+.answer-btn {
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #a13d62;
+
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+
+}
+
+
+.answer-btn:hover {
+
+    transform: scale(1.05);
+
+    background: #ff6fa5;
+
+    color: white;
+
+}
+
+
+#questMessage {
+
+    margin-top: 25px;
+
+    min-height: 30px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #b63d6d;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .quest-card {
+
+        padding: 45px 20px;
+
+    }
+
+    .quest-question {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+/* Question navigation */
+
+.question-box {
+    display: none;
+}
+
+
+.question-box.active-question {
+    display: block;
+}
+
+
+.question-box h3 {
+
+    font-size: 22px;
+
+    color: #8f3156;
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+
+}
+/* =========================
+   CAKE CUTTING SECTION
+========================= */
+
+.cake-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.cake-card {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    padding: 50px 40px;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.25);
+
+}
+
+
+.cake-sparkles {
+
+    font-size: 35px;
+
+    animation: sparkleDance 2s infinite alternate;
+
+}
+
+
+@keyframes sparkleDance {
+
+    from {
+        transform: scale(1) rotate(-5deg);
+    }
+
+    to {
+        transform: scale(1.15) rotate(5deg);
+    }
+
+}
+
+
+.cake-small {
+
+    color: #b04a70;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-top: 10px;
+
+}
+
+
+.cake-card h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(30px, 5vw, 45px);
+
+    margin: 20px 0;
+
+}
+
+
+.cake-text {
+
+    color: #74354d;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+/* CAKE */
+
+.cake-container {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 270px;
+
+    margin: 25px auto;
+    z-index: 10;
+
+}
+
+
+/* Candle */
+.candle-wrapper {
+    position: absolute !important;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer !important;
+    z-index: 999 !important;
+    pointer-events: auto !important;
+}
+
+
+.candle {
+
+    width: 18px;
+
+    height: 65px;
+
+    border-radius: 10px;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+
+    background: repeating-linear-gradient(
+        45deg,
+        #ff7eb3,
+        #ff7eb3 8px,
+        #ffffff 8px,
+        #ffffff 16px
+    );
+
+}
+
+
+.flame {
+
+    width: 22px;
+
+    height: 32px;
+
+    background: #ff9d00;
+
+    border-radius: 50% 50% 50% 50%;
+
+    margin: auto;
+
+    margin-bottom: 4px;
+
+    animation: flameMove 0.5s infinite alternate;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+
+    box-shadow: 0 0 20px #ffb347;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+
+@keyframes flameMove {
+
+    from {
+        transform: scale(1) rotate(-4deg);
+    }
+
+    to {
+        transform: scale(1.15) rotate(4deg);
+    }
+
+}
+
+
+.flame-off {
+    animation: none !important;
+    opacity: 0 !important;
+    transform: scale(0) !important;
+    transition: 0.5s ease;
+}
+
+
+
+
+/* Cream */
+
+.cream {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 25px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    bottom: -12px;
+
+}
+
+
+.cream1 {
+    left: 35px;
+}
+
+.cream2 {
+    left: 105px;
+}
+
+.cream3 {
+    left: 180px;
+}
+
+/* =========================
+   TWO PART CAKE
+========================= */
+
+.cake-body {
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 140px;
+
+    top: 85px;
+
+    left: 15px;
+
+    display: flex;
+
+    overflow: visible;
+
+}
+
+
+.cake-half {
+
+    position: relative;
+
+    width: 125px;
+
+    height: 140px;
+
+    transition: transform 1.5s cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+    );
+
+}
+
+
+/* Half Cake Top */
+
+.cake-half .cake-top {
+
+    position: absolute;
+
+    width: 125px;
+
+    height: 60px;
+
+    top: 0;
+
+    background: #ffb6d2;
+
+    box-shadow:
+        inset 0 -10px rgba(255, 255, 255, 0.25);
+
+}
+
+
+.left-half .cake-top {
+
+    border-radius: 125px 0 0 0;
+
+}
+
+
+.right-half .cake-top {
+
+    border-radius: 0 125px 0 0;
+
+}
+
+
+/* Cake Layer */
+
+.cake-half .cake-layer {
+
+    position: absolute;
+
+    top: 35px;
+
+    width: 125px;
+
+    height: 100px;
+
+    padding-top: 35px;
+
+    font-size: 25px;
+
+    background: #ff6fa5;
+
+    box-shadow:
+        inset 0 -12px rgba(180, 50, 100, 0.15);
+
+}
+
+
+.left-half .cake-layer {
+
+    border-radius: 0 0 0 25px;
+
+}
+
+
+.right-half .cake-layer {
+
+    border-radius: 0 0 25px 0;
+
+}
+
+
+/* CAKE CUT ANIMATION */
+
+.cake-cut .left-half {
+
+    transform:
+        translateX(-55px)
+        rotate(-8deg);
+
+}
+
+
+.cake-cut .right-half {
+
+    transform:
+        translateX(55px)
+        rotate(8deg);
+
+}
+
+
+/* Plate */
+
+.cake-plate {
+
+    position: absolute;
+
+    width: 290px;
+
+    height: 20px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    left: -5px;
+
+    top: 210px;
+
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* Buttons */
+
+.next-btn {
+
+    margin-top: 15px;
+
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f91,
+        #ff7eb3
+    );
+
+    transition: 0.3s;
+
+}
+
+
+.next-btn:hover:not(:disabled) {
+
+    transform: translateY(-4px) scale(1.05);
+
+}
+
+
+.next-btn:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+.hidden-button {
+
+    display: none !important;
+
+}
+
+
+.cake-status {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #b63d6d;
+
+    min-height: 30px;
+
+}
+
+.cake-card .next-btn {
+
+    display: block;
+
+    margin: 15px auto 0;
+
+}
+
+
+/* Cake Cutting Animation */
+
+.cake-cut {
+
+    animation: cakeCut 1.5s ease forwards;
+
+}
+
+
+@keyframes cakeCut {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-2deg) scale(1.03);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cake-card {
+
+        padding: 40px 20px;
+
+    }
+
+}
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #b63d6d;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15);
+
+}
+
+.back-btn:hover {
+
+    transform: translateX(-5px);
+
+    background: #ff6fa5;
+
+    color: white;
+
+}
+.quest-card,
+.cake-card {
+    position: relative;
+}
+.hidden-section {
+    display: none !important;
+}
+/* =========================
+   SPARKLE BLOOM BLAST
+========================= */
+
+.sparkle-blast {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+
+
+/* Sparkles created by JavaScript */
+
+.blast-sparkle {
+    position: absolute;
+
+    font-size: 28px;
+
+    animation: sparkleBlast 3.5s ease-out forwards;
+}
+
+
+@keyframes sparkleBlast {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            rotate(720deg)
+            scale(1.4);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* =========================
+   DO YOU LIKE ME SECTION
+========================= */
+
+.like-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.like-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    min-height: 500px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.25);
+
+    overflow: hidden;
+
+}
+
+
+.like-emoji {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    animation: likeEmojiBounce 2s infinite;
+
+}
+
+
+@keyframes likeEmojiBounce {
+
+    0%,
+    100% {
+
+        transform: translateY(0) rotate(0deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px) rotate(8deg);
+
+    }
+
+}
+
+
+.like-small {
+
+    color: #b04a70;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.like-card h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    line-height: 1.4;
+
+    margin-bottom: 20px;
+
+}
+
+
+.like-text {
+
+    font-size: 18px;
+
+    color: #74354d;
+
+}
+
+
+.like-buttons {
+
+    position: relative;
+
+    min-height: 150px;
+
+    width: 100%;
+
+    height: 150px;
+
+    margin-top: 40px;
+
+}
+
+
+#yesBtn,
+#noBtn {
+
+    position: absolute;
+
+    padding: 16px 38px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    z-index: 10;
+
+}
+
+
+#yesBtn {
+
+    left: 25%;
+
+    top: 40px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f91,
+        #ff7eb3
+    );
+
+    box-shadow: 0 10px 25px rgba(255, 79, 145, 0.35);
+
+}
+
+
+#yesBtn:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+#noBtn {
+
+    left: 55%;
+
+    top: 40px;
+
+    color: #b63d6d;
+
+    background: white;
+
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+
+    z-index: 10;
+
+}
+
+
+#likeMessage {
+
+    margin-top: 10px;
+
+    min-height: 35px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #b63d6d;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .like-card {
+
+        padding: 60px 20px;
+
+        min-height: 500px;
+
+    }
+
+
+    #yesBtn {
+
+        left: 15%;
+
+    }
+
+
+    #noBtn {
+
+        left: 55%;
+
+    }
+
+}
+/* =========================
+   MEMORIES SECTION
+========================= */
+
+.memories-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 20px;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.memories-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    padding: 60px 40px;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.25);
+
+}
+
+
+.memory-header {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.memory-icon {
+
+    font-size: 55px;
+
+    animation: memoryFloat 2s infinite alternate;
+
+}
+
+
+@keyframes memoryFloat {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+.memory-header p {
+
+    color: #b04a70;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+
+}
+
+
+.memory-header h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(35px, 5vw, 55px);
+
+    margin: 15px 0;
+
+}
+
+
+.memory-header span {
+
+    color: #74354d;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+/* GALLERY GRID */
+
+.memories-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* MEMORY CARD */
+
+.memory-item {
+
+    position: relative;
+
+    height: 250px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 30px rgba(255, 105, 180, 0.18);
+
+}
+
+
+.memory-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+
+}
+
+
+.memory-item:hover img {
+
+    transform: scale(1.12);
+
+}
+
+
+/* TEXT OVERLAY */
+
+.memory-overlay {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    color: white;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(120, 20, 60, 0.8)
+        );
+
+    transform: translateY(100%);
+
+    transition: 0.4s;
+
+}
+
+
+.memory-item:hover .memory-overlay {
+
+    transform: translateY(0);
+
+}
+
+
+#memoriesNextBtn {
+
+    display: block;
+
+    margin: 40px auto 0;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .memories-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .memories-card {
+
+        padding: 60px 20px;
+
+    }
+
+    .memories-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* =========================
+   SECRET DETECTOR SECTION
+========================= */
+
+.detector-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+}
+
+
+.detector-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 750px;
+
+    min-height: 600px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 25px 50px rgba(255, 105, 180, 0.25);
+
+}
+
+
+/* ICON */
+
+.detector-icon {
+
+    font-size: 60px;
+
+    animation: detectorFloat 2s infinite alternate;
+
+}
+
+
+@keyframes detectorFloat {
+
+    from {
+
+        transform: translateY(0);
+
+    }
+
+    to {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+
+/* SMALL TEXT */
+
+.detector-small {
+
+    color: #b04a70;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin: 10px 0 20px;
+
+}
+
+
+/* HEADING */
+
+.detector-card h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+}
+
+
+/* SCANNER BOX */
+
+.scanner-box {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 550px;
+
+    margin: 40px auto;
+
+    padding: 40px 30px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 2px solid rgba(255, 105, 180, 0.25);
+
+    box-shadow:
+        0 15px 30px rgba(255, 105, 180, 0.12);
+
+}
+
+
+/* SCANNING LINE */
+
+.scan-line {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: #ff4f91;
+
+    box-shadow: 0 0 20px #ff4f91;
+
+    animation: scanMove 2s linear infinite;
+
+}
+
+
+@keyframes scanMove {
+
+    0% {
+
+        top: 0;
+
+    }
+
+    100% {
+
+        top: 100%;
+
+    }
+
+}
+
+
+/* SCAN TEXT */
+
+#scanText {
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    color: #74354d;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* PROGRESS BAR */
+
+.scan-progress {
+
+    width: 100%;
+
+    height: 12px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #ffe0ec;
+
+}
+
+
+#scanProgress {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ff4f91,
+        #ff8fba
+    );
+
+    transition: width 0.6s ease;
+
+}
+
+
+/* FINAL QUESTION */
+
+.hidden-question {
+
+    display: none;
+
+}
+
+
+.detector-question {
+
+    animation: questionAppear 0.7s ease;
+
+}
+
+
+@keyframes questionAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.final-question-title {
+
+    color: #ff4f91;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.detector-question h3 {
+
+    font-size: 25px;
+
+    color: #74354d;
+
+    margin: 20px 0 30px;
+
+}
+
+
+/* OPTIONS */
+
+.detector-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    max-width: 450px;
+
+    margin: auto;
+
+}
+
+
+.detector-option {
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    color: #74354d;
+
+    background: white;
+
+    box-shadow:
+        0 8px 20px rgba(255, 105, 180, 0.15);
+
+    transition: 0.3s;
+
+}
+
+
+.detector-option:hover {
+
+    transform: scale(1.03);
+
+    background: #fff0f6;
+
+}
+
+
+#detectorMessage {
+
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #b63d6d;
+
+}
+
+
+#detectorNextBtn {
+
+    margin-top: 20px;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .detector-card {
+
+        padding: 60px 20px;
+
+    }
+
+}
+/* =========================
+   SECRET PASSWORD SECTION
+========================= */
+
+.password-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+}
+
+
+.password-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    min-height: 550px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 25px 50px rgba(255, 105, 180, 0.25);
+
+}
+
+
+/* LOCK */
+
+.lock-icon {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    transition: 0.5s;
+
+}
+
+
+.unlock-animation {
+
+    animation: unlockPop 1s ease;
+
+}
+
+
+@keyframes unlockPop {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.4) rotate(15deg);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* SMALL TITLE */
+
+.password-small {
+
+    color: #b04a70;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* MAIN HEADING */
+
+.password-card h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    margin-bottom: 15px;
+
+}
+
+
+/* DESCRIPTION */
+
+.password-text {
+
+    color: #74354d;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* PASSWORD BOX */
+
+.password-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 35px auto;
+
+}
+
+
+#passwordInput {
+
+    width: 60%;
+
+    padding: 16px 20px;
+
+    border: 2px solid #ffd0e1;
+
+    outline: none;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    transition: 0.3s;
+
+}
+
+
+#passwordInput:focus {
+
+    border-color: #ff4f91;
+
+    box-shadow:
+        0 0 20px rgba(255, 79, 145, 0.2);
+
+}
+
+
+#passwordCheckBtn {
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f91,
+            #ff7eb3
+        );
+
+    transition: 0.3s;
+
+}
+
+
+#passwordCheckBtn:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* MESSAGE */
+
+#passwordMessage {
+
+    min-height: 35px;
+
+    color: #b63d6d;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+
+/* OPEN LETTER BUTTON */
+
+#openLetterBtn {
+
+    margin-top: 25px;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .password-card {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .password-box {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    #passwordInput {
+
+        width: 100%;
+
+    }
+
+}
+.password-hint {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    color: #b63d6d;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px dashed #ff8fba;
+
+}
+.wrong-password {
+
+    animation: wrongPasswordShake 0.5s;
+
+}
+
+
+@keyframes wrongPasswordShake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+/* =========================
+   SECRET LETTER SECTION
+========================= */
+
+.letter-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+}
+
+
+.letter-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    min-height: 600px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 25px 50px rgba(255, 105, 180, 0.25);
+
+}
+
+
+.letter-small {
+
+    color: #b04a70;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.letter-intro h2 {
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: clamp(32px, 5vw, 52px);
+
+}
+
+
+.letter-description {
+
+    color: #74354d;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-wrapper {
+
+    width: 280px;
+
+    height: 200px;
+
+    margin: 50px auto 25px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+}
+
+
+.envelope {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition: transform 0.8s ease;
+
+}
+
+
+.envelope-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 75%;
+
+    background: #ff9fbd;
+
+    border-radius: 0 0 15px 15px;
+
+    box-shadow:
+        0 15px 30px rgba(255, 105, 180, 0.3);
+
+}
+
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 50px;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 140px solid transparent;
+
+    border-right: 140px solid transparent;
+
+    border-top: 100px solid #ff6fa3;
+
+    transform-origin: top;
+
+    transition: transform 0.8s ease;
+
+    z-index: 3;
+
+}
+
+
+.heart-seal {
+
+    position: absolute;
+
+    top: 85px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* Envelope Open */
+
+.envelope.open .envelope-flap {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.envelope.open {
+
+    animation:
+        envelopeMove 1s forwards;
+
+}
+
+
+@keyframes envelopeMove {
+
+    0% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: scale(0.8) translateY(-40px);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+.open-letter-text {
+
+    color: #b63d6d;
+
+    font-weight: 600;
+
+    animation: clickHint 1.5s infinite;
+
+}
+
+
+@keyframes clickHint {
+
+    50% {
+
+        transform: translateY(-5px);
+
+    }
+
+}
+
+
+/* =========================
+   ACTUAL LETTER
+========================= */
+
+.hidden-letter {
+
+    display: none;
+
+}
+
+
+.actual-letter {
+
+    animation:
+        letterReveal 1s ease;
+
+}
+
+
+@keyframes letterReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px) scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+
+    }
+
+}
+
+
+.letter-paper {
+
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 50px 45px;
+
+    text-align: left;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9f4,
+            #fff0f6
+        );
+
+    box-shadow:
+        0 20px 40px rgba(255, 105, 180, 0.2);
+
+}
+
+
+.letter-heart {
+
+    text-align: center;
+
+    font-size: 45px;
+
+}
+
+
+.letter-paper h2 {
+
+    text-align: center;
+
+    font-family: "Pacifico", cursive;
+
+    color: #b63d6d;
+
+    font-size: 38px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.letter-paper p {
+
+    color: #74354d;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+
+}
+
+
+.letter-ending {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+}
+
+
+.letter-ending h3 {
+
+    color: #ff4f91;
+
+    font-size: 28px;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .letter-card {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .envelope-wrapper {
+
+        width: 250px;
+
+    }
+
+
+    .envelope-flap {
+
+        border-left-width: 125px;
+
+        border-right-width: 125px;
+
+    }
+
+
+    .letter-paper {
+
+        padding: 35px 25px;
+
+    }
+
+}
+/* =========================
+   FAKE LETTER
+========================= */
+
+.fake-paper {
+
+    text-align: center;
+
+    animation: fakeLetterAppear 0.8s ease;
+
+}
+
+
+@keyframes fakeLetterAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.8) rotate(-3deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1) rotate(0);
+
+    }
+
+}
+
+
+.fake-paper h2 {
+
+    color: #ff4f91;
+
+}
+
+
+.fake-paper p {
+
+    text-align: center;
+
+}
+
+
+.fake-ending {
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px dashed #ff8fba;
+
+}
+/* =========================
+   FINAL BIRTHDAY SECTION
+========================= */
+
+.final-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffd6e5,
+            #ffb6cf,
+            #fda7c6
+        );
+
+}
+
+
+/* FIREWORKS CANVAS */
+
+#fireworksCanvas {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+/* FINAL CONTENT */
+
+.final-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border-radius: 40px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.5);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(120, 20, 70, 0.25);
+
+}
+
+
+/* CROWN */
+
+.birthday-crown {
+
+    font-size: 65px;
+
+    animation: crownFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes crownFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0)
+                   rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-15px)
+                   rotate(5deg);
+
+    }
+
+}
+
+
+/* SMALL TEXT */
+
+.final-small-text {
+
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+}
+
+
+/* MAIN HEADING */
+
+.final-content h1 {
+
+    margin: 15px 0 0;
+
+    font-size:
+        clamp(55px, 12vw, 110px);
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    color: white;
+
+    text-shadow:
+        0 5px 25px
+        rgba(150, 20, 90, 0.35);
+
+}
+
+
+.final-content h2 {
+
+    margin-top: 15px;
+
+    font-family:
+        "Pacifico", cursive;
+
+    font-size:
+        clamp(35px, 6vw, 60px);
+
+    color: #b63d6d;
+
+}
+
+
+/* MESSAGE */
+
+.final-message {
+
+    max-width: 600px;
+
+    margin: 35px auto;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.35);
+
+}
+
+
+.final-message p {
+
+    color: #74354d;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* EMOJIS */
+
+.final-emojis {
+
+    font-size: 35px;
+
+    letter-spacing: 12px;
+
+    animation: emojiDance 2s ease-in-out infinite;
+
+}
+
+
+@keyframes emojiDance {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+
+/* ENDING */
+
+.final-ending {
+
+    margin-top: 30px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .final-section {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .final-content {
+
+        padding: 40px 18px;
+
+    }
+
+
+    .final-message p {
+
+        font-size: 16px;
+
+    }
+
+}
+/* =========================================
+   AGE REVEAL PAGE
+========================================= */
+
+.age-reveal-section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 220, 235, 0.95),
+        rgba(255, 190, 215, 0.9));
+
+    text-align: center;
+}
+
+
+/* Back button */
+
+.age-back-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 20;
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.age-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 220px;
+}
+
+#countdownNumber {
+    font-size: 120px;
+    font-weight: 900;
+
+    color: #d63384;
+
+    text-shadow:
+        0 0 10px rgba(214, 51, 132, 0.4),
+        0 0 30px rgba(214, 51, 132, 0.3);
+
+    animation: countdownPop 1s ease;
+}
+
+
+@keyframes countdownPop {
+
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   BALLOON AREA
+========================================= */
+
+.balloon-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 80px;
+
+    margin-top: 20px;
+}
+
+
+.hidden-age-content {
+    display: none !important;
+}
+
+
+/* Balloon wrapper */
+
+.balloon-wrapper {
+    position: relative;
+
+    width: 150px;
+    height: 270px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   BALLOON
+========================================= */
+
+.balloon {
+    width: 125px;
+    height: 155px;
+
+    border-radius: 50% 50% 48% 48%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.2s ease;
+
+    box-shadow:
+        inset -15px -15px 25px rgba(0, 0, 0, 0.08),
+        inset 12px 10px 20px rgba(255, 255, 255, 0.5),
+        0 10px 25px rgba(180, 70, 120, 0.2);
+
+    animation: balloonFloat 2.5s ease-in-out infinite;
+}
+
+
+/* Small balloon bottom */
+
+.balloon::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -9px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 14px solid #d94b86;
+}
+
+
+/* Pink balloon */
+
+.balloon-pink {
+    background: linear-gradient(
+        145deg,
+        #ffb6d5,
+        #ff79ae
+    );
+}
+
+
+/* Rose balloon */
+
+.balloon-rose {
+    background: linear-gradient(
+        145deg,
+        #ff9fc5,
+        #e95b91
+    );
+}
+
+
+/* Balloon highlight */
+
+.balloon::before {
+    content: "";
+
+    position: absolute;
+
+    top: 22px;
+    left: 28px;
+
+    width: 25px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    transform: rotate(25deg);
+}
+
+
+/* Balloon emoji */
+
+.balloon span {
+    font-size: 70px;
+
+    filter:
+        drop-shadow(0 5px 5px rgba(0, 0, 0, 0.08));
+
+    display: none;
+}
+
+
+/* Question mark */
+
+.balloon-number {
+    font-size: 48px;
+
+    font-weight: 900;
+
+    color: white;
+
+    text-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.15);
+
+    z-index: 2;
+}
+
+
+/* Hover */
+
+.balloon:hover {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+
+/* =========================================
+   BALLOON STRING
+========================================= */
+
+.balloon-string {
+    width: 2px;
+
+    height: 105px;
+
+    background: #a85b78;
+
+    position: relative;
+}
+
+
+/* =========================================
+   POP ANIMATION
+========================================= */
+
+.balloon.pop {
+    animation: balloonPop 0.35s ease forwards;
+}
+
+
+@keyframes balloonPop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+.balloon-wrapper.popped {
+    cursor: default;
+}
+
+
+/* Hide string after pop */
+
+.balloon-wrapper.popped .balloon-string {
+    opacity: 0;
+}
+
+
+/* =========================================
+   REVEALED 2 / 0
+========================================= */
+
+.revealed-number {
+    position: absolute;
+
+    top: 35px;
+
+    font-size: 105px;
+
+    font-weight: 900;
+
+    color: #d63384;
+
+    opacity: 0;
+
+    transform: scale(0.2);
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #ff70aa,
+        0 0 50px #ff70aa;
+}
+
+
+.revealed-number.show {
+    animation: numberReveal 0.8s ease forwards;
+}
+
+
+@keyframes numberReveal {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(-20deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+/* =========================================
+   INSTRUCTION
+========================================= */
+
+.balloon-instruction {
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #8f365e;
+
+    animation: instructionPulse 1.5s infinite;
+}
+
+
+@keyframes instructionPulse {
+
+    0%, 100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   AGE RESULT
+========================================= */
+
+.age-result {
+    text-align: center;
+
+    margin-top: 25px;
+
+    animation: resultAppear 1s ease;
+}
+
+
+@keyframes resultAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.twenty {
+    font-size: 150px;
+
+    font-weight: 1000;
+
+    color: #d63384;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #ff7eb5,
+        0 0 50px #ff7eb5,
+        0 0 90px #ffb6d5;
+
+    animation: twentyGlow 1.2s ease-in-out infinite alternate;
+}
+
+
+@keyframes twentyGlow {
+
+    from {
+        transform: scale(1);
+        text-shadow:
+            0 0 10px white,
+            0 0 25px #ff7eb5,
+            0 0 50px #ff7eb5;
+    }
+
+    to {
+        transform: scale(1.08);
+        text-shadow:
+            0 0 15px white,
+            0 0 35px #ff5f9d,
+            0 0 70px #ff5f9d,
+            0 0 100px #ffb6d5;
+    }
+}
+
+
+.age-result h2 {
+    margin-top: 20px;
+
+    font-size: 28px;
+
+    color: #8f365e;
+}
+
+
+.age-result p {
+    font-size: 19px;
+
+    color: #9c4269;
+
+    margin-top: 8px;
+}
+
+
+.age-sparkles {
+    font-size: 28px;
+
+    margin-top: 20px;
+
+    animation: sparkleMove 1.5s infinite;
+}
+
+
+@keyframes sparkleMove {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .age-back-btn {
+        top: 15px;
+        left: 15px;
+    }
+
+    #countdownNumber {
+        font-size: 90px;
+    }
+
+    .balloon-area {
+        gap: 25px;
+    }
+
+    .balloon-wrapper {
+        width: 120px;
+    }
+
+    .balloon {
+        width: 100px;
+        height: 130px;
+    }
+
+    .balloon-number {
+        font-size: 40px;
+    }
+
+    .revealed-number {
+        font-size: 80px;
+    }
+
+    .twenty {
+        font-size: 120px;
+    }
+
+    .age-result h2 {
+        font-size: 22px;
+    }
+
+    .age-result p {
+        font-size: 16px;
+    }
+}

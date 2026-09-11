@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ANU 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <span class="heart">💗</span>
+        <span class="heart">💕</span>
+        <span class="heart">💖</span>
+        <span class="heart">💓</span>
+
+        <span class="balloon">🎈</span>
+        <span class="balloon">🎀</span>
+        <span class="balloon">🎈</span>
+
+        <span class="sparkle">✨</span>
+        <span class="sparkle">⭐</span>
+        <span class="sparkle">✨</span>
+        <span class="sparkle">💫</span>
+    </div>
+
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+
+        <div class="welcome-card">
+
+            <div class="top-text">
+                ✨ A SPECIAL DAY FOR A SPECIAL PERSON ✨
+            </div>
+
+            <h1>
+                HAPPY BIRTHDAY
+                <span>ANU 🎂</span>
+            </h1>
+
+            <h2>Pandi... 🐼😂❤️</h2>
+
+            <p>
+                Today is not just your birthday...
+                <br>
+                It's the day the world received another beautiful
+                and slightly crazy person 😜💗
+            </p>
+
+            <button id="startBtn">
+                Open Your Surprise 🎁
+            </button>
+
+            <p class="small-text">
+                Warning: This surprise contains memories
+                and a little bit of nonsense 😂
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     BIRTHDAY QUEST SECTION
+    ========================= -->
+
+    <section class="quest-section hidden-section" id="questSection">
+
+        <div class="quest-card">
+            <button class="back-btn" id="backToWelcome">
+                ← Back
+            </button>
+
+            <div class="quest-icon">🎮</div>
+
+            <p class="quest-small">
+                BEFORE YOU UNLOCK YOUR SURPRISE...
+            </p>
+
+            <h2>Birthday Quest, Pandi! 🐼😂</h2>
+
+            <!-- QUESTION 1 -->
+            <div class="question-box active-question" data-question="1">
+
+                <h3>1. Who is the cutest and slightly crazy Pandi? 🐼😂</h3>
+
+                <div class="options">
+
+                    <button class="answer-btn wrong">It's Dhana 😒</button>
+                    <button class="answer-btn correct">Obviously Me 🐼👑</button>
+                    <button class="answer-btn wrong">Definitely Not Me 😂</button>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION 2 -->
+            <div class="question-box" data-question="2">
+
+                <h3>2. What nickname does dhana call Anu? 😜</h3>
+
+                <div class="options">
+
+                    <button class="answer-btn wrong">gadidha 👑</button>
+                    <button class="answer-btn correct">Aneeeuu 😐</button>
+                    <button class="answer-btn wrong">Pandi 🐼😂</button>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION 3 -->
+            <div class="question-box" data-question="3">
+
+                <h3>3. When did our friendship story begin? ❤️</h3>
+
+                <div class="options">
+
+                    <button class="answer-btn wrong">August 32, 2024 🎉</button>
+                    <button class="answer-btn correct">August 8, 2024 ❤️</button>
+                    <button class="answer-btn wrong">september 1, 2024 😂</button>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION 4 -->
+            <div class="question-box" data-question="4">
+
+                <h3>4. Who is the most cute and innocent girl in the world? 🎂👑</h3>
+
+                <div class="options">
+
+                    <button class="answer-btn wrong">It's Me ❤️ </button>
+                    <button class="wrong answer-btn">Obviously Dhana 👑</button>
+                    <button class="answer-btn correct">Both of them 😂❤️</button>
+
+                </div>
+
+            </div>
+
+
+            <p id="questMessage"></p>
+            <button id="questNextBtn" class="next-btn hidden-button">
+                Next Surprise ➜ 🎂
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     CAKE CUTTING SECTION
+    ========================= -->
+
+    <section class="cake-section hidden-section" id="cakeSection">
+
+        <div class="cake-card">
+            <button class="back-btn" id="backToQuest">
+                ← Back
+            </button>
+
+            <div class="cake-sparkles">✨ 🎀 ✨</div>
+
+            <p class="cake-small">
+                CONGRATULATIONS, PANDI! 🐼💗
+            </p>
+
+            <h2>Now It's Time To Make A Wish! ✨</h2>
+
+            <p class="cake-text">
+                Close your eyes, make a beautiful wish...
+                <br>
+                Then click the candle to blow it out! 🕯️😜
+            </p>
+
+
+            <!-- CAKE -->
+
+
+                <div class="cake-container">
+
+                    <!-- Candle -->
+                    <div class="candle-wrapper" id="candleWrapper">
+
+                        <div class="flame" id="flame"></div>
+
+                        <div class="candle"></div>
+
+                    </div>
+
+
+                    <!-- CAKE BODY -->
+                    <div class="cake-body" id="cakeBody">
+
+                        <!-- LEFT HALF -->
+                        <div class="cake-half left-half">
+
+                            <div class="cake-top"></div>
+
+                            <div class="cake-layer">
+                                💗 ✨
+                            </div>
+
+                        </div>
+
+
+                        <!-- RIGHT HALF -->
+                        <div class="cake-half right-half">
+
+                            <div class="cake-top"></div>
+
+                            <div class="cake-layer">
+                                ✨ 💗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Plate -->
+                    <div class="cake-plate"></div>
+
+                </div>
+
+                <!-- STATUS MUST BE HERE -->
+                <p class="cake-status" id="cakeStatus">
+                    Click the candle, Pandi! 👆😂
+                </p>
+
+
+                <!-- CUT BUTTON -->
+                <button id="cutCakeBtn" class="next-btn" disabled>
+                    Cut The Cake 🎂🔪
+                </button>
+
+
+                <!-- CONTINUE BUTTON -->
+                <button id="nextAfterCake" class="next-btn hidden-button">
+                    Continue Your Surprise ➜ 💗
+                </button>
+
+            </div>
+
+        </div>
+        <div id="sparkleBlast" class="sparkle-blast"></div>
+
+    </section>
+
+    <!-- =========================
+     DO YOU LIKE ME SECTION
+    ========================= -->
+
+    <section class="like-section hidden-section" id="likeSection">
+
+        <div class="like-card">
+
+            <!-- Back Button -->
+            <button class="back-btn" id="backToCake">
+                ← Back
+            </button>
+
+            <div class="like-emoji">😜💗</div>
+
+            <p class="like-small">
+                IMPORTANT QUESTION ALERT 🚨
+            </p>
+
+            <h2>Anu... Do You Like Me? 😜❤️</h2>
+
+            <p class="like-text">
+                Think carefully before answering... 👀😂
+            </p>
+
+
+            <div class="like-buttons" id="likeButtons">
+
+                <button id="yesBtn">
+                    YES 😍💗
+                </button>
+
+                <button id="noBtn">
+                    NO 😒
+                </button>
+
+            </div>
+
+
+            <p id="likeMessage"></p>
+            <button id="nextToMemories" class="next-btn hidden-button">
+                Okay let's View Our Memories 📸 ➜
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     MEMORIES SECTION
+    ========================= -->
+
+    <section class="memories-section hidden-section" id="memoriesSection">
+
+        <div class="memories-card">
+
+            <button class="back-btn" id="backToLike">
+                ← Back
+            </button>
+
+            <div class="memory-header">
+
+                <div class="memory-icon">📸💗</div>
+
+                <p>THE BEST PART OF THE SURPRISE</p>
+
+                <h2>Our Beautiful Memories ✨</h2>
+
+                <span>
+                    Some memories make us laugh...
+                    some make us smile...
+                    and some become unforgettable forever ❤️
+                </span>
+
+            </div>
+
+
+            <!-- SAMPLE PHOTOS -->
+
+            <div class="memories-grid">
+
+                <div class="memory-item">
+                    <img src="images/photo1.jpeg" alt="Memory 1">
+                    <div class="memory-overlay">
+                        <span>A Beautiful Memory 💗</span>
+                    </div>
+                </div>
+
+
+                <div class="memory-item">
+                    <img src="images/photo2.jpeg" alt="Memory 2">
+                    <div class="memory-overlay">
+                        <span>Forever a Memory 💗</span>
+                    </div>
+                </div>
+
+
+                <div class="memory-item">
+                    <img src="images/photo3.jpeg" alt="Memory 3">
+                    <div class="memory-overlay">
+                        <span>Always Special ❤️</span>
+                    </div>
+                </div>
+
+
+                <div class="memory-item">
+                    <img src="images/photo4.jpeg" alt="Memory 4">
+                    <div class="memory-overlay">
+                        <span>Unforgettable ✨</span>
+                    </div>
+                </div>
+
+
+                <div class="memory-item">
+                    <img src="images/photo5.jpeg" alt="Memory 5">
+                    <div class="memory-overlay">
+                        <span>Our Trio Friendship 💕</span>
+                    </div>
+                </div>
+
+
+                <div class="memory-item">
+                    <img src="images/photo6.jpeg" alt="Memory 6">
+                    <div class="memory-overlay">
+                        <span>Crazy Moments 😂</span>
+                    </div>
+                </div>
+
+                <div class="memory-item">
+                    <img src="images/photo7.jpeg" alt="Memory 7">
+                    <div class="memory-overlay">
+                        <span>Another Beautiful Moment 💗</span>
+                    </div>
+                </div>
+
+                <div class="memory-item">
+                    <img src="images/photo8.jpeg" alt="Memory 8">
+                    <div class="memory-overlay">
+                        <span>Always Special ❤️✨</span>
+                    </div>
+                </div>
+
+                <div class="memory-item">
+                    <img src="images/photo9.jpeg" alt="Memory 9">
+                    <div class="memory-overlay">
+                        <span>Too Many Memories 😂💕</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button id="memoriesNextBtn" class="next-btn">
+                One More Surprise 🎁 ➜
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     SECRET DETECTOR SECTION
+    ========================= -->
+
+    <section class="detector-section hidden-section" id="detectorSection">
+
+        <div class="detector-card">
+
+            <!-- Back Button -->
+            <button class="back-btn" id="backToMemories">
+                ← Back
+            </button>
+
+            <div class="detector-icon">🔍🔐</div>
+
+            <p class="detector-small">
+                TOP SECRET SECURITY SYSTEM
+            </p>
+
+            <h2>Scanning Birthday Girl... 👀</h2>
+
+            <!-- Scanner Box -->
+            <div class="scanner-box">
+
+                <div class="scan-line"></div>
+
+                <p id="scanText">
+                    Initializing scanner...
+                </p>
+
+                <div class="scan-progress">
+
+                    <div id="scanProgress"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Final Question - Initially Hidden -->
+
+            <div class="detector-question hidden-question"
+                id="detectorQuestion">
+
+                <p class="final-question-title">
+                    ONE FINAL QUESTION REMAINS... 👀
+                </p>
+
+                <h3>
+                    We can confirm that Anu is a normal person? 😂
+                </h3>
+
+                <div class="detector-options">
+
+                    <button class="detector-option wrong-detector">
+                        😇 YES, definitely normal
+                    </button>
+
+                    <button class="detector-option wrong-detector">
+                        🤔 Maybe...
+                    </button>
+
+                    <button class="detector-option correct-detector">
+                        😂 NO, absolutely impossible
+                    </button>
+
+                </div>
+
+                <p id="detectorMessage"></p>
+
+                <button id="detectorNextBtn"
+                        class="next-btn hidden-button">
+
+                    Enter Secret Password 🔐 ➜
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     SECRET PASSWORD SECTION
+    ========================= -->
+
+    <section class="password-section hidden-section" id="passwordSection">
+
+        <div class="password-card">
+
+            <!-- Back Button -->
+            <button class="back-btn" id="backToDetector">
+                ← Back
+            </button>
+
+
+            <!-- Lock Icon -->
+            <div class="lock-icon" id="lockIcon">
+                🔒
+            </div>
+
+
+            <p class="password-small">
+                FINAL SECURITY CHECK
+            </p>
+
+
+            <h2>Enter the Secret Password 🔐</h2>
+
+
+            <p class="password-text">
+                Almost there, Pandi... 👀😂<br>
+                Enter the password to unlock something special 💌
+            </p>
+            <p class="password-hint">
+                💡 Hint: Ippativaraku chusina words lo most repeated word... 👀😂
+            </p>
+
+
+            <!-- Password Input -->
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter password here... 👀"
+                    autocomplete="off"
+                >
+
+                <button id="passwordCheckBtn">
+                    Unlock 🔓
+                </button>
+
+            </div>
+
+
+            <!-- Message -->
+
+            <p id="passwordMessage"></p>
+
+
+            <!-- Open Letter Button -->
+
+            <button
+                id="openLetterBtn"
+                class="next-btn hidden-button">
+
+                Open My Secret Letter 💌 ➜
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     SECRET LETTER SECTION
+    ========================= -->
+
+    <section class="letter-section hidden-section" id="letterSection">
+
+        <div class="letter-card">
+
+            <!-- Back Button -->
+            <button class="back-btn" id="backToPassword">
+                ← Back
+            </button>
+
+
+            <!-- ENVELOPE INTRO -->
+            <div class="letter-intro" id="letterIntro">
+
+                <p class="letter-small">
+                    YOU FINALLY MADE IT... 🔐✨
+                </p>
+
+                <h2>A Secret Letter For My Cutie 💌</h2>
+
+                <p class="letter-description">
+                    Ee letter kosam chaala security pass ayyav kadha... finally see 😂💗
+                </p>
+
+
+                <!-- Envelope -->
+                <div class="envelope-wrapper" id="envelopeWrapper">
+
+                    <div class="envelope">
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-body"></div>
+
+                        <div class="heart-seal">
+                            💗
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p class="open-letter-text">
+                    Click the envelope to open it 💌👀
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                FAKE FUNNY LETTER
+            ========================= -->
+
+            <div class="fake-letter hidden-letter" id="fakeLetter">
+
+                <div class="letter-paper fake-paper">
+
+                    <div class="letter-heart">
+                        😂💌
+                    </div>
+
+                    <h2>Osey Mental... 😂</h2>
+
+                    <p>
+                        Neeku evadu letter raasthadu ra? 😂
+                    </p>
+
+                    <p>
+                        Letter ani cheppagane password enter chesi mari
+                        ikkadiki vachhi chusesav 😭😂
+                    </p>
+
+                    <p>
+                        Poyi pakkeli adduko amma 😂
+                        Maakem pani ledhu letter raasthu kurchodaniki!
+                    </p>
+
+                    <p>
+                        Intha security scanner pass chesi...
+                        password enter chesi...
+                        envelope open chesi...
+                        finally ikkada ki vachhi idhi chadhuvuthunnav 😂
+                    </p>
+
+                    <p>
+                        Nee curiosity ki hats off Pandi 😭👏
+                    </p>
+
+                    <div class="fake-ending">
+
+                        <h3>
+                            Okay bye bye... 😂👋
+                        </h3>
+
+                        <p>
+                            Upset avvaku... just go back 😌
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                REAL EMOTIONAL LETTER
+            ========================= -->
+
+            <div class="actual-letter hidden-letter"
+                id="actualLetter">
+
+                <div class="letter-paper">
+
+                    <div class="letter-heart">
+                        💗
+                    </div>
+
+                    <h2>Dear Anu... 🐼💌</h2>
+
+                    <p>
+                        First of all... HAPPY BIRTHDAYYYY! 🎉🎂💗
+                    </p>
+
+                    <p>
+                        Nenu nee life lo undadam honestly chaala lucky person nuvvu.
+                        Mana memories, mana silly conversations, random
+                        nonsense and funny moments... anni neeku chaala
+                        valuable 😂❤️
+                    </p>
+
+                    <p>
+                        Sometimes ninnu tease cheyyadam,
+                        Aneeuuu ani pilavadam and nonsense cheyyadam
+                        chaala fun 😂🐼
+                    </p>
+
+                    <p>
+                        But jokes pakkana pedthe...
+                        I am really happy that you are my cute friend 💗
+                    </p>
+
+                    <p>
+                        Nee life lo always happiness, success,
+                        peace and beautiful memories undali ✨
+                    </p>
+
+                    <p>
+                        Eppudu ilaage smile chesthu,
+                        crazy ga andhariki mental ekkisthu undu 😂,
+                        and naa best cute little dairy la vundu.... 💗🐼
+                    </p>
+
+                    <div class="letter-ending">
+
+                        <p>
+                            Once again...
+                        </p>
+
+                        <h3>
+                            Happy Birthday, ANU! 🎉💗🎂
+                        </h3>
+
+                        <p>
+                            With lots of memories, laughter & friendship ❤️
+                        </p>
+
+                    </div>
+
+                    <button id="finalSurpriseBtn" class="next-btn">
+                        One Last Surprise 🎁 ➜
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AGE REVEAL PAGE -->
+    <section class="age-reveal-section hidden-section" id="ageRevealSection">
+
+        <button class="back-btn age-back-btn" id="backToLetter">
+            ← Back
+        </button>
+
+        <!-- COUNTDOWN -->
+        <div class="age-countdown" id="ageCountdown">
+            <div id="countdownNumber">3</div>
+        </div>
+
+        <!-- BALLOONS -->
+        <div class="balloon-area hidden-age-content" id="balloonArea">
+
+            <div class="balloon-wrapper" id="balloonWrapper1">
+                <div class="balloon balloon-pink" id="balloon1">
+                    <span>🎈</span>
+                    <div class="balloon-number">?</div>
+                </div>
+                <div class="balloon-string"></div>
+
+                <div class="revealed-number" id="number2">2</div>
+            </div>
+
+
+            <div class="balloon-wrapper" id="balloonWrapper2">
+                <div class="balloon balloon-rose" id="balloon2">
+                    <span>🎈</span>
+                    <div class="balloon-number">?</div>
+                </div>
+                <div class="balloon-string"></div>
+
+                <div class="revealed-number" id="number0">0</div>
+            </div>
+
+        </div>
+
+        <!-- INSTRUCTION -->
+        <p class="balloon-instruction hidden-age-content" id="balloonInstruction">
+            Tap the balloons one by one... 👀🎈
+        </p>
+
+        <!-- 20 RESULT -->
+        <div class="age-result hidden-age-content" id="ageResult">
+
+            <div class="twenty">20</div>
+
+            <h2>Cheers to 20! 🍾🥂💗</h2>
+
+            <p>
+                Happy 20th Birthday, Anu! 🐼✨
+            </p>
+
+            <div class="age-sparkles">
+                ✨ 💗 ✨ 💗 ✨
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     FINAL BIRTHDAY SECTION
+    ========================= -->
+
+    <section class="final-section hidden-section" id="finalSection">
+
+        <!-- Fireworks Canvas -->
+        <canvas id="fireworksCanvas"></canvas>
+
+
+        <!-- Main Content -->
+
+        <div class="final-content">
+
+            <div class="birthday-crown">
+                👑
+            </div>
+
+            <p class="final-small-text">
+                TODAY IS UR DAY ✨
+            </p>
+
+            <h1>
+                HAPPY<br>
+                BIRTHDAY
+            </h1>
+
+            <h2>
+                ANU! 💗🎂
+            </h2>
+
+
+            <div class="final-message">
+
+                <p>
+                    Another year older...
+                    but don't worry, mental 😂🐼
+                </p>
+
+                <p>
+                    You're still the same crack,
+                    mental and special person 💗
+                </p>
+
+                <p>
+                    May your life always be filled with
+                    happiness, laughter, success
+                    and beautiful memories ✨
+                </p>
+
+            </div>
+
+
+            <div class="final-emojis">
+                🎂 💗 ✨ 🐼 🎉
+            </div>
+
+
+            <p class="final-ending">
+                Made with lots of friendship,
+                memories and a little bit of teasing 😂💌
+            </p>
+
+        </div>
+
+    </section>
+    
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
